@@ -19,10 +19,11 @@ An automated pipeline that converts Bengali handwriting into digital text, trans
 3. Put images in `data/raw_scans/` and run `python main.py`.
 
 ⚠️ Known Limitations (Work in Progress)
+
 1.While this project is functional, it is currently in active development. The following areas are being improved:
 
 2.Single Character Recognition: The model occasionally struggles with isolated characters where context is missing.
 
 3.Long Paragraphs: Processing large blocks of text can result in a decrease in accuracy or "drift" in the OCR alignment.
 
-Handwriting Variability: Extremely cursive or stylistic Bengali handwriting may require further fine-tuning.
+4.Handwriting Variability: Extremely cursive or stylistic Bengali handwriting may require further fine-tuning.

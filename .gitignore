@@ -1,0 +1,9 @@
+# Ignore local data and generated assets
+data/raw_scans/*
+data/train_dataset/*
+output/audio/*
+output/processed_images/*
+
+# Ignore Python's internal files
+__pycache__/
+.env

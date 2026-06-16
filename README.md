@@ -26,4 +26,5 @@ An automated pipeline that converts Bengali handwriting into digital text, trans
 
 3.Long Paragraphs: Processing large blocks of text can result in a decrease in accuracy or "drift" in the OCR alignment.
 
-4.Handwriting Variability: Extremely cursive or stylistic Bengali handwriting may require further fine-tuning.
+
+

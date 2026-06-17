@@ -24,7 +24,7 @@ An automated pipeline that converts Bengali handwriting into digital text, trans
 
 2.Single Character Recognition: The model occasionally struggles with isolated characters where context is missing.
 
-3.Long Paragraphs: Processing large blocks of text can result in a decrease in accuracy or "drift" in the OCR alignment.
+
 
 
 

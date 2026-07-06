@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BongLipi | Authentic Translation</title>
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon_processed.png') }}?v=3">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+
+  <!-- Three.js & GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <!-- Lenis -->
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+</head>
+
+<body class="loading">
+
+  <!-- WebGL Background -->
+  <canvas id="webgl-canvas"></canvas>
+
+  <!-- Creative Preloader -->
+  <div id="preloader">
+    <div class="preloader-wrapper">
+      <div class="preloader-title-bg font-serif italic">BongLipi</div>
+      <div class="preloader-title-fill font-serif italic" id="preloader-fill">BongLipi</div>
+    </div>
+    <div class="preloader-bottom">
+      <div class="preloader-counter font-sans" id="preloader-percent">00%</div>
+      <div class="preloader-bar-container">
+        <div class="preloader-bar" id="preloader-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cursor -->
+  <div id="custom-cursor">
+    <div class="cursor-dot"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="nav-container">
+    <div class="logo-text font-serif italic">BongLipi.</div>
+    <nav class="nav-links">
+      <a href="#hero" class="nav-link font-sans">Prologue</a>
+      <a href="#methodology" class="nav-link font-sans">Method</a>
+      <a href="#culture" class="nav-link font-sans">Roots</a>
+      <a href="#app" class="nav-link font-sans">Translate</a>
+    </nav>
+  </header>
+
+  <div id="scroll-wrapper">
+
+    <!-- Hero -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1 class="hero-title font-serif">
+            <span class="line-wrap"><span>The Soul</span></span>
+            <span class="line-wrap"><span class="italic">Of Bengali</span></span>
+            <span class="line-wrap"><span>Script.</span></span>
+          </h1>
+          <p class="hero-subtitle reveal-fade">
+            We preserve the warmth of ink and paper, translating the cultural depth of Bengali handwriting into digital
+            understanding without losing its soul.
+          </p>
+        </div>
+        <div class="hero-img-wrap reveal-clip">
+          <img src="{{ url_for('static', filename='bengali_hero.png') }}" class="parallax-img" alt="Bengali Writer" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Huge Marquee -->
+    <section class="marquee-section">
+      <div class="marquee-track font-serif">
+        <span>Authentic</span> <span>Culture</span> <span>Heritage</span> <span>Authentic</span> <span>Culture</span>
+        <span>Heritage</span>
+      </div>
+    </section>
+
+    <!-- Methodology (How We Do It) -->
+    <section class="methodology-section" id="methodology">
+      <div class="container">
+        <div class="methodology-header reveal-fade">
+          <h2 class="section-title font-serif">How We Do It.</h2>
+        </div>
+
+        <div class="methodology-grid">
+          <div class="methodology-text-area">
+            <div class="method-step reveal-fade">
+              <span class="step-num font-serif italic">01.</span>
+              <h3 class="font-sans">Visual Ingestion</h3>
+              <p>Your physical manuscripts are scanned without leaving a trace on our servers. Volatile memory
+                processing ensures absolute privacy.</p>
+            </div>
+
+            <div class="method-step reveal-fade" style="margin-left: 2rem;">
+              <span class="step-num font-serif italic">02.</span>
+              <h3 class="font-sans">Neural Decoding</h3>
+              <p>We leverage multimodal vision models that understand the nuance of cursive Bengali, mapping loops and
+                curves to digital unicode instantly.</p>
+            </div>
+
+            <div class="method-step reveal-fade" style="margin-left: 4rem;">
+              <span class="step-num font-serif italic">03.</span>
+              <h3 class="font-sans">Cultural Translation</h3>
+              <p>Beyond direct word-to-word swapping, our engine focuses on semantic meaning, preserving the artistic
+                intent of the original author.</p>
+            </div>
+          </div>
+
+          <div class="methodology-img-wrap reveal-clip">
+            <img src="{{ url_for('static', filename='bengali_methodology.png') }}" class="parallax-img"
+              alt="Methodology" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Manifesto / Full Width Parallax -->
+    <section class="manifesto-section">
+      <div class="manifesto-img-wrap reveal-clip">
+        <img src="{{ url_for('static', filename='bengali_manifesto.png') }}" class="parallax-img"
+          alt="Bengali Library" />
+        <div class="manifesto-overlay">
+          <h2 class="manifesto-text font-serif italic reveal-fade">
+            "To translate is not to betray, but to carry the soul across."
+          </h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- Culture -->
+    <section class="culture-section" id="culture">
+      <div class="container culture-grid">
+        <div class="culture-img-wrap reveal-clip">
+          <img src="{{ url_for('static', filename='bengali_culture.png') }}" class="parallax-img"
+            alt="Kolkata Streets" />
+        </div>
+        <div class="culture-text reveal-fade">
+          <h2 class="font-serif italic">Deep Roots.</h2>
+          <p>
+            Language is more than data. Every cursive sweep and slanted line carries the history of Bengal. Our vision
+            model treats your script not as an artifact, but as a living piece of art.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scanner App -->
+    <section class="app-section" id="app">
+      <div class="container">
+        <div class="app-header reveal-fade">
+          <h2 class="app-title font-serif">
+            <span class="line-wrap"><span>Begin The</span></span>
+            <span class="line-wrap"><span class="italic">Translation.</span></span>
+          </h2>
+        </div>
+
+        <div class="app-layout">
+          <!-- Input -->
+          <div class="glass-panel input-panel reveal-clip">
+            <span class="panel-label">Source Document</span>
+
+            <div class="upload-zone" id="drop-zone">
+              <input type="file" id="file-input" accept="image/*" hidden />
+              <h3 class="upload-title font-serif italic">Select Canvas</h3>
+              <p class="font-sans"
+                style="color:var(--text-secondary); font-size: 0.8rem; letter-spacing:0.1em; text-transform:uppercase;">
+                Drop your manuscript here</p>
+            </div>
+
+            <div class="preview-zone" id="preview-box" style="display: none;">
+              <button class="btn-remove" id="btn-remove-file">Discard</button>
+              <img id="image-preview" src="" alt="Canvas Preview" />
+            </div>
+
+            <button class="btn-action" id="btn-run-inference" disabled>
+              <span class="btn-inner-text">Synthesize</span>
+              <span class="btn-spinner" style="display:none;">...</span>
+            </button>
+          </div>
+
+          <!-- Output -->
+          <div class="glass-panel output-panel reveal-clip" style="transition-delay: 0.2s;">
+            <span class="panel-label">Digital Synthesis</span>
+
+            <div class="empty-state font-serif" id="empty-state-outputs">
+              Awaiting manuscript.
+            </div>
+
+            <div class="output-section" id="output-data-box" style="display:none;">
+              <div class="out-block">
+                <div class="out-header">
+                  <span class="out-label">Bengali Transcription</span>
+                  <button class="btn-icon" id="btn-tts-bengali">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <path d="M11 5L6 9H2v6h4l5 4V5z" />
+                      <path d="M15.54 8.46a5 5 0 0 1 0 7.07M19.07 4.93a10 10 0 0 1 0 14.14" />
+                    </svg>
+                  </button>
+                </div>
+                <div class="out-text font-bengali" id="res-bengali-text"></div>
+              </div>
+
+              <div class="out-block">
+                <div class="out-header">
+                  <span class="out-label">English Interpretation</span>
+                  <button class="btn-icon" id="btn-tts-english">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <path d="M11 5L6 9H2v6h4l5 4V5z" />
+                      <path d="M15.54 8.46a5 5 0 0 1 0 7.07M19.07 4.93a10 10 0 0 1 0 14.14" />
+                    </svg>
+                  </button>
+                </div>
+                <div class="out-text font-serif italic" id="res-english-text"></div>
+              </div>
+
+              <div class="out-meta">
+                <div class="meta-item">
+                  <span class="out-label">Confidence</span>
+                  <span class="meta-value" id="conf-text-val">0%</span>
+                </div>
+                <div class="meta-item">
+                  <span class="out-label">Pace</span>
+                  <span class="meta-value" id="res-latency">0s</span>
+                </div>
+              </div>
+
+              <div id="res-engine-warning"
+                style="display:none; color: var(--accent); margin-top:1rem; font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer font-sans">
+      <span>© 2026 BongLipi</span>
+      <span>Authentic Intelligence</span>
+    </footer>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>

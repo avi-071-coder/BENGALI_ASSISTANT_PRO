@@ -41,7 +41,7 @@ Create a `.env` file in the root directory and configure your API key:
 ```env
 GEMINI_API_KEY=your_actual_key_here
 ```
-*(Note: If no valid key is provided, the system will automatically degrade to use the local Tesseract OCR engine).*
+*(Note: If no valid key is provided, the system will automatically degrade to use the 
 
 ### 3. Execution
 Start the Flask application server:
